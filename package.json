@@ -1,0 +1,20 @@
+{
+  "name": "basekit",
+  "version": "1.0.0",
+  "description": "Cool stuff for React apps",
+  "main": "index.ts",
+  "repository": "https://github.com/untitleddev/basekit.git",
+  "author": "UntitledDev",
+  "license": "MIT",
+  "private": false,
+  "dependencies": {
+    "ramda": "^0.27.0",
+    "react": "^16.13.1",
+    "styled-components": "^5.1.1",
+    "ui-box": "^3.3.0"
+  },
+  "devDependencies": {
+    "prettier": "^2.0.5",
+    "typescript": "^3.9.5"
+  }
+}
