@@ -13,15 +13,21 @@ module.exports = {
   resolve: {
     extensions: [".ts", ".tsx", ".js", ".json"],
   },
-  externals: ["React"],
+  externals: {
+    react: "react",
+    "react-is": "react-is",
+    "styled-components": "styled-components",
+  },
   module: {
     rules: [
       {
         test: /\.tsx?$/,
+        exclude: /node_modules/,
         loader: "babel-loader",
       },
       {
         test: /\.js$/,
+        exclude: /node_modules/,
         use: ["source-map-loader"],
         enforce: "pre",
       },
