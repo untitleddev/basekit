@@ -1,20 +1,48 @@
 {
-  "name": "basekit",
+  "name": "@udev/basekit",
   "version": "1.0.0",
-  "description": "Cool stuff for React apps",
-  "main": "index.ts",
+  "description": "Goodies for your Gatsby and CRA projects.",
+  "main": "lib/basekit.js",
+  "types": "lib",
   "repository": "https://github.com/untitleddev/basekit.git",
-  "author": "UntitledDev",
+  "author": "UntitledDev <hello@untitled.dev>",
   "license": "MIT",
   "private": false,
+  "scripts": {
+    "develop": "webpack --watch",
+    "build": "yarn declarations && webpack",
+    "declarations": "tsc --declaration",
+    "prepack": "rimraf ./lib && yarn build"
+  },
   "dependencies": {
     "ramda": "^0.27.0",
-    "react": "^16.13.1",
     "styled-components": "^5.1.1",
     "ui-box": "^3.3.0"
   },
   "devDependencies": {
+    "@babel/core": "^7.10.2",
+    "@babel/preset-typescript": "^7.10.1",
+    "@types/react": "^16.9.35",
+    "@types/webpack-env": "^1.15.2",
+    "babel-loader": "^8.1.0",
     "prettier": "^2.0.5",
-    "typescript": "^3.9.5"
+    "rimraf": "^3.0.2",
+    "source-map-loader": "^1.0.0",
+    "typescript": "^3.9.5",
+    "webpack": "^4.43.0",
+    "webpack-cli": "^3.3.11"
+  },
+  "peerDependencies": {
+    "react": "^16.13.1"
+  },
+  "keywords": [
+    "react",
+    "gatsby",
+    "hooks",
+    "components",
+    "ui"
+  ],
+  "directories": {
+    "lib": "lib"
   }
 }
