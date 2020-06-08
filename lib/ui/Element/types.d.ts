@@ -1,6 +1,6 @@
 import * as React from "react";
 declare type ThemeFn = (theme: any) => string | number | boolean | undefined;
-export declare type PropType = string | number | boolean | ThemeFn | undefined;
+export declare type PropType = string | number | boolean | ThemeFn | Record<string, any> | undefined;
 declare type SafeHTMLAttributes = Omit<React.AllHTMLAttributes<any>, "color" | "height" | "width" | "as" | "size">;
 export interface ElementProps extends SafeHTMLAttributes {
     is?: string;

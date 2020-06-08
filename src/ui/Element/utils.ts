@@ -25,19 +25,27 @@ export const resolveAlias = (props: ElementProps): ElementProps => {
   return R.mergeRight(props, resolvedShorthandProps);
 };
 
-export const parseValue = (theme: any, value: PropType): string =>
+export const parseValue = (
+  theme: any,
+  device: string,
+  value: PropType
+): string =>
   R.cond<any, string>([
     [R.isNil, R.identity],
     [R.is(Boolean), () => `${theme.gridSize}px`],
     [R.is(Number), (num: number) => `${theme.gridSize * num}px`],
-    [R.is(Function), (fn: Function) => parseValue(theme, fn(theme))],
+    [R.is(Function), (fn: Function) => parseValue(theme, device, fn(theme))],
+    [
+      R.is(Object),
+      R.pipe(R.prop(device), (v) => parseValue(theme, device, v as PropType)),
+    ],
     [R.T, String],
   ])(value);
 
-export const parseValues = (theme: any) =>
+export const parseValues = (theme: any, device: string) =>
   R.mapObjIndexed((value: PropType, prop: string) => {
     if (!R.includes(prop, [...CSS_PROPS, ...cssAliasProps])) {
       return value;
     }
-    return parseValue(theme, value);
+    return parseValue(theme, device, value);
   });

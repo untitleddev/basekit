@@ -1,7 +1,13 @@
 import * as React from "react";
 
 type ThemeFn = (theme: any) => string | number | boolean | undefined;
-export type PropType = string | number | boolean | ThemeFn | undefined;
+export type PropType =
+  | string
+  | number
+  | boolean
+  | ThemeFn
+  | Record<string, any>
+  | undefined;
 
 type SafeHTMLAttributes = Omit<
   React.AllHTMLAttributes<any>,

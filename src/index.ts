@@ -1,3 +1,9 @@
-export { default as Element } from "./ui/Element";
+// Context providers
+export { default as GlobalStateProvider } from "./providers/globalState";
 
-export const addTwo = (number: number): number => number + 2;
+// Hooks
+export { default as useGlobalState } from "./hooks/useGlobalState";
+
+// UI components
+export { default as Element } from "./ui/Element";
+export { default as Scrollbars } from "./ui/Scrollbars";
