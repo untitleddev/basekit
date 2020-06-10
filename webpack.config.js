@@ -9,6 +9,7 @@ module.exports = {
     filename: "basekit.js",
     library: "Basekit",
     libraryTarget: "umd",
+    globalObject: "this",
   },
   resolve: {
     extensions: [".ts", ".tsx", ".js", ".json"],
