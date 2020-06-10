@@ -9,7 +9,7 @@ interface DeviceInfo {
 
 export default function (): DeviceInfo {
   const [state, setState] = React.useState({
-    width: window?.innerWidth ?? 0,
+    width: 0,
     device: "desktop",
   });
   const theme = useTheme();
