@@ -1,6 +1,6 @@
 {
   "name": "@udev/basekit",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "Goodies for your Gatsby and CRA projects.",
   "main": "lib/basekit.js",
   "module": "basekit",
@@ -18,11 +18,6 @@
     "build": "yarn run build:types && yarn run build:js",
     "declarations": "tsc --declaration",
     "prepack": "rimraf ./lib && yarn build"
-  },
-  "dependencies": {
-    "ramda": "^0.27.0",
-    "react-custom-scrollbars": "^4.2.1",
-    "ui-box": "^3.3.0"
   },
   "devDependencies": {
     "@babel/core": "^7.10.2",
@@ -44,14 +39,18 @@
     "@types/styled-components": "^5.1.0",
     "babel-loader": "^8.1.0",
     "prettier": "^2.0.5",
+    "ramda": "^0.27.0",
     "react": "^16.13.1",
+    "react-custom-scrollbars": "^4.2.1",
     "rimraf": "^3.0.2",
     "rollup": "^2.15.0",
     "source-map-loader": "^1.0.0",
     "styled-components": "^5.1.1",
-    "typescript": "^3.9.5"
+    "typescript": "^3.9.5",
+    "ui-box": "^3.3.0"
   },
   "peerDependencies": {
+    "ramda": "^0.27.0",
     "react": "^16.13.1",
     "styled-components": "^5.1.1"
   },

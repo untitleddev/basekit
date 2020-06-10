@@ -146,6 +146,6 @@ Temporary Items
 
 .idea
 src
-webpack.config.js
+rollup.config.js
 tsconfig.json
 .babelrc
