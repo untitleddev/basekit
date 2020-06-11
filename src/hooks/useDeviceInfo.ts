@@ -18,9 +18,10 @@ export default function (): DeviceInfo {
     const updateState = () =>
       setState({
         width: window.innerWidth,
-        device: R.pipe<any, any, any, string>(
+        device: R.pipe<any, any, any, any, string>(
           R.toPairs,
           R.find(([device, width]) => window.innerWidth <= width),
+          R.defaultTo(["desktop", 0]),
           R.head
         )(R.propOr({}, "breakpoints", theme)),
       });

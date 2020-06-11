@@ -1,6 +1,6 @@
 {
   "name": "@udev/basekit",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "description": "Goodies for your Gatsby and CRA projects.",
   "main": "lib/basekit.js",
   "module": "basekit",
