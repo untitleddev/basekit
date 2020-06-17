@@ -18,7 +18,7 @@ export default {
 
   // Specify here external modules which you don't want to include in your bundle (for instance: 'lodash', 'moment' etc.)
   // https://rollupjs.org/guide/en#external-e-external
-  external: ["react", "styled-components", "ramda"],
+  external: ["react", "styled-components", "ramda", "ui-box"],
 
   plugins: [
     alias({

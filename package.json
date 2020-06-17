@@ -1,6 +1,6 @@
 {
   "name": "@udev/basekit",
-  "version": "1.0.6",
+  "version": "1.0.8",
   "description": "Goodies for your Gatsby and CRA projects.",
   "main": "lib/basekit.js",
   "module": "basekit",
@@ -35,13 +35,11 @@
     "@rollup/plugin-node-resolve": "^8.0.1",
     "@types/ramda": "^0.27.6",
     "@types/react": "^16.9.35",
-    "@types/react-custom-scrollbars": "^4.0.6",
     "@types/styled-components": "^5.1.0",
     "babel-loader": "^8.1.0",
     "prettier": "^2.0.5",
     "ramda": "^0.27.0",
     "react": "^16.13.1",
-    "react-custom-scrollbars": "^4.2.1",
     "rimraf": "^3.0.2",
     "rollup": "^2.15.0",
     "source-map-loader": "^1.0.0",
@@ -52,7 +50,8 @@
   "peerDependencies": {
     "ramda": "^0.27.0",
     "react": "^16.13.1",
-    "styled-components": "^5.1.1"
+    "styled-components": "^5.1.1",
+    "ui-box": "^3.3.0"
   },
   "keywords": [
     "react",

@@ -6,4 +6,3 @@ export { default as useGlobalState } from "./hooks/useGlobalState";
 
 // UI components
 export { default as Element } from "./ui/Element";
-export { default as Scrollbars } from "./ui/Scrollbars";
