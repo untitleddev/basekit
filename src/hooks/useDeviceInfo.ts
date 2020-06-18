@@ -1,5 +1,4 @@
 import React from "react";
-import { useTheme } from "styled-components";
 import * as R from "ramda";
 
 interface DeviceInfo {
@@ -12,18 +11,20 @@ export default function (): DeviceInfo {
     width: 0,
     device: "desktop",
   });
-  const theme = useTheme();
 
   React.useEffect(() => {
     const updateState = () =>
       setState({
         width: window.innerWidth,
-        device: R.pipe<any, any, any, any, string>(
-          R.toPairs,
+        device: R.pipe<any, any, string>(
           R.find(([device, width]) => window.innerWidth <= width),
-          R.defaultTo(["desktop", 0]),
           R.head
-        )(R.propOr({}, "breakpoints", theme)),
+        )([
+          ["mobile", 480],
+          ["tablet", 768],
+          ["desktop", 1024],
+          ["hd", Infinity],
+        ]),
       });
 
     window.addEventListener("resize", updateState);
