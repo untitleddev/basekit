@@ -6,6 +6,17 @@ interface DeviceInfo {
   device: string;
 }
 
+const findDevice = (deviceWidth: number) =>
+  R.pipe<any, any, string>(
+    R.find(([device, width]) => deviceWidth < width),
+    R.head
+  )([
+    ["mobile", 768],
+    ["tablet", 1024],
+    ["desktop", 1440],
+    ["hd", Infinity],
+  ]);
+
 export default function (): DeviceInfo {
   const [state, setState] = React.useState({
     width: 0,
@@ -16,16 +27,10 @@ export default function (): DeviceInfo {
     const updateState = () =>
       setState({
         width: window.innerWidth,
-        device: R.pipe<any, any, string>(
-          R.find(([device, width]) => window.innerWidth <= width),
-          R.head
-        )([
-          ["mobile", 480],
-          ["tablet", 768],
-          ["desktop", 1024],
-          ["hd", Infinity],
-        ]),
+        device: findDevice(window.innerWidth),
       });
+
+    updateState();
 
     window.addEventListener("resize", updateState);
 
